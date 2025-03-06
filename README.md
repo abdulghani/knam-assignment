@@ -6,8 +6,8 @@ This project is a RESTful API built using Hono, PgBoss, and Knex to manage repor
 ## Setup Instructions
 ### Prerequisites
 Ensure you have the following installed:
-- Node.js (>=v20.18.3)
-- Docker and Docker compose (>=27.5.1)
+- Node.js (`>=v20.18.3`)
+- Docker and Docker compose (`>=27.5.1`)
 
 ### Installation
 1. Clone the repository:
