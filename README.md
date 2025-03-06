@@ -68,4 +68,5 @@ Project are provided with Scalar UI with OpenAPI document describing the API, yo
 - Add unit and integration tests.
 - Separate data access to a tested model repository
 - Add the report generation process to the queue/schedule
+- Add the report result to cloud storage or report entry
 
