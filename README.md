@@ -53,6 +53,10 @@ Queue process are executed asynchronously without blocking API request, report p
 
 ![Log queue process](./public/queue-process.png)
 
+Project are provided with Scalar UI with OpenAPI document describing the API, you can use the interface to create and send the request to the application.
+
+![Scalar UI OpenAPI](./public/scalar-ui.png)
+
 ## Assumptions
 - Reports are processed asynchronously and not immediately available.
 - Cancellation only works before the report is processed.
