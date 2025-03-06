@@ -185,7 +185,7 @@ reportRoute.delete(
       return c.json({ error: "Report not found" }, 404);
     }
 
-    if (["pending", "scheduled", "processing"].includes(report?.status)) {
+    if (["pending", "scheduled"].includes(report?.status)) {
       await db("reports")
         .where({ id: reportId })
         .update({ status: "cancelled" });
