@@ -31,6 +31,8 @@ The API should be served in `http://localhost:3000` with the default `.env` prov
 - **PgBoss for Job Queue**: Ensures reliable scheduling and processing of reports.
 - **Knex for Database Access**: Simplifies SQL queries and improves maintainability.
 - **TypeScript**: Provides type safety and better code organization.
+- Provided migration and initial seed data
+- Report related route consolidated to single path `/report`
 
 ## Assumptions
 - Reports are processed asynchronously and not immediately available.

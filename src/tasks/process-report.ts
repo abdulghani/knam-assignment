@@ -33,6 +33,7 @@ export async function registerProcessReport(instance: PgBoss) {
         // process report, do some heavy lifting here presumably
         await db("reports").where("id", reportId).update({
           status: "completed",
+          processed_at: new Date(),
         });
         taskLogger.info(`Report ${reportId} processed`);
       })
