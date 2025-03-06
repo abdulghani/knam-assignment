@@ -28,7 +28,7 @@ The API should be served in `http://localhost:3000` with the default `.env` prov
 
 ### Cleanup
 
-After you're using the API, if you need to cleanup docker image running, you can use `npm run cleanup` command.
+After you're finished using the API, if you need to cleanup docker image running, you can use `npm run cleanup` command.
 
 ## Design Choices
 - Hono over Express, Identical API with helper packages for documentations.
