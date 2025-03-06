@@ -47,6 +47,7 @@ Following are the high level overview of the report processing for immediate and
 - Pino is used for logging, allowing real-time visibility into report processing as it occurs.
 - The development database data is stored in a relative directory within the project, making it easy to clean up when needed.
 - Use of Scalar UI to show the OpenAPI documentation in the root GET `/` path, can be used to send requests to the application.
+- Define CRON process report interval with `REPORT_PROCESS_CRON` env, default to `* * * * *` (every minute)
 
 ## Assumptions
 - Reports are processed asynchronously and not immediately available.
