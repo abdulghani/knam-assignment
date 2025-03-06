@@ -25,6 +25,6 @@ app.route("/", reportRoute);
 
   if (process.env.NODE_ENV === "development") {
     logger.info(`Server running on port ${PORT}`);
-    open("http://localhost:3000");
+    open(`http://localhost:${PORT}`);
   }
 })();

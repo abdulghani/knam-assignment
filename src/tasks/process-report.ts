@@ -11,6 +11,12 @@ export async function registerProcessReport(instance: PgBoss) {
     await Promise.all(
       jobs.map(async (job: any) => {
         const reportId = job?.data?.reportId;
+
+        if (!reportId) {
+          taskLogger.error("Missing reportId in job data");
+          return;
+        }
+
         taskLogger.info(`Processing report ${reportId}`);
         const report = await db("reports").where("id", reportId).first();
 
