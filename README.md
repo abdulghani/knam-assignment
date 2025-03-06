@@ -35,8 +35,11 @@ The API should be served in `http://localhost:3000` with the default `.env` prov
 ## Assumptions
 - Reports are processed asynchronously and not immediately available.
 - Cancellation only works before the report is processed.
+- CRON schedule to process report run every minute to check report to process
 
 ## Future Improvements
 - Implement authentication and authorization.
+- Add route request validation
 - Add unit and integration tests.
+- Separate data access to a tested model repository
 
