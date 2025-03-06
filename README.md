@@ -31,7 +31,7 @@ The API should be served in `http://localhost:3000` with the default `.env` prov
 After you're finished using the API, if you need to cleanup docker image running, you can use `npm run cleanup` command.
 
 ## Design Choices
-- Hono over Express, Identical API with helper packages for documentations.
+- Hono over Express, Identical API with additional helper packages for documentations.
 - PgBoss for Job Queue, Ensures reliable scheduling and processing of reports.
 - Knex for Database Access, Simplifies SQL queries and improves maintainability.
 - TypeScript, Provides type safety and better code organization.
