@@ -49,6 +49,10 @@ Following are the high level overview of the report processing for immediate and
 - Use of Scalar UI to show the OpenAPI documentation in the root GET `/` path, can be used to send requests to the application.
 - Define CRON process report interval with `REPORT_PROCESS_CRON` env, default to `* * * * *` (every minute)
 
+Queue process are executed asynchronously without blocking API request, report processing and scheduled process are logged as it added to the queue/scheduled.
+
+![Log queue process](./public/queue-process.png)
+
 ## Assumptions
 - Reports are processed asynchronously and not immediately available.
 - Cancellation only works before the report is processed.
