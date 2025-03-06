@@ -3,12 +3,6 @@
 ## Overview
 This project is a RESTful API built using Hono, PgBoss, and Knex to manage report and schedule generation. The system allows users to request reports either immediately or on a schedule, processes them asynchronously using a queue, and provides status updates on requested reports.
 
-## Tech Stack
-- **Hono**: Lightweight framework for handling HTTP requests
-- **PgBoss**: Task queue and scheduler for PostgreSQL
-- **Knex**: SQL query builder for database interactions
-- **TypeScript**: Strongly typed JavaScript for better maintainability
-
 ## Setup Instructions
 ### Prerequisites
 Ensure you have the following installed:
