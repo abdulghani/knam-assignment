@@ -7,7 +7,9 @@ import open from "open";
 import { reportRoute } from "./routes/report";
 import { registerDocs } from "./routes/docs";
 import { PORT } from "./constants/port";
+import moment from "moment";
 
+moment.suppressDeprecationWarnings = true;
 const app = new Hono();
 
 registerDocs(app);
