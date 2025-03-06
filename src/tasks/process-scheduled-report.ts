@@ -10,9 +10,7 @@ export async function registerProcessScheduledReport(instance: PgBoss) {
   await instance.createQueue(QUEUE_NAME);
   await instance.schedule(QUEUE_NAME, "* * * * *");
   await instance.work(QUEUE_NAME, async (job) => {
-    taskLogger.info(
-      `Processing scheduled report, looking up scheduled pending reports`
-    );
+    taskLogger.info(`Looking up scheduled pending reports`);
 
     const reports = await db("reports")
       .where({

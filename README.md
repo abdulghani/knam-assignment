@@ -35,6 +35,7 @@ The API should be served in `http://localhost:3000` with the default `.env` prov
 - Report related route consolidated to single path `/report`
 - Pending scheduled report is recorded in the database for the CRON job to retrieve, ensuring pending reports are persisted to process.
 - Provided OpenAPI documentation in GET `/openapi` path and Scalar UI on GET `/` path
+- Pino is used for logging, allowing real-time visibility into report processing as it occurs.
 
 ## Assumptions
 - Reports are processed asynchronously and not immediately available.
