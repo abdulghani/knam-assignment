@@ -5,6 +5,13 @@ import { db } from "../db";
 import { PROCESS_REPORT_EVENT } from "../tasks/process-report";
 import { queue } from "../queue";
 import moment from "moment";
+import { JSONMiddleware } from "../utils/json-middleware";
+import {
+  CREATE_REPORT_RESPONSE_EXAMPLE,
+  DELETE_REPORT_BY_ID_RESPONSE_EXAMPLE,
+  GET_REPORT_BY_ID_RESPONSE_EXAMPLE,
+  GET_REPORT_RESPONSE_EXAMPLE,
+} from "../constants/report-response-examples";
 
 export const reportRoute = new Hono().basePath("/report");
 const REPORT_FIELD_SELECTION = [
@@ -56,6 +63,7 @@ reportRoute.get(
         },
       },
     ],
+    responses: GET_REPORT_RESPONSE_EXAMPLE,
   }),
   async (c) => {
     const { status, limit, page } = c.req.query();
@@ -104,19 +112,21 @@ reportRoute.post(
               },
             },
             example: {
-              schedule: "2021-09-30T10:00:00Z",
+              schedule: "2025-01-01T10:00:00Z",
             },
           },
         },
       },
     },
+    responses: CREATE_REPORT_RESPONSE_EXAMPLE,
   }),
+  JSONMiddleware,
   async (c) => {
     const { schedule }: { schedule?: string } = await c.req.json();
     const reportId: string = ulid();
 
     if (schedule) {
-      if (!moment(schedule).isValid()) {
+      if (!moment(schedule, moment.ISO_8601).isValid()) {
         return c.json({ error: "Invalid schedule format" }, 400);
       }
 
@@ -149,6 +159,7 @@ reportRoute.get(
         required: true,
       },
     ],
+    responses: GET_REPORT_BY_ID_RESPONSE_EXAMPLE,
   }),
   async (c) => {
     const reportId = c.req.param("id");
@@ -173,6 +184,7 @@ reportRoute.delete(
         required: true,
       },
     ],
+    responses: DELETE_REPORT_BY_ID_RESPONSE_EXAMPLE,
   }),
   async (c) => {
     const reportId = c.req.param("id");

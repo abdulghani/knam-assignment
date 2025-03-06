@@ -24,6 +24,7 @@
   "homepage": "https://github.com/abdulghani/knam-assignment#readme",
   "description": "",
   "devDependencies": {
+    "@scalar/api-reference": "^1.25.128",
     "@types/express": "^5.0.0",
     "@types/node": "^22.13.9",
     "openapi-types": "^12.1.3",

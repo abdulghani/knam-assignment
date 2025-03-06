@@ -27,6 +27,8 @@ export function registerDocs(app: Hono) {
     "/",
     apiReference({
       theme: "default",
+      darkMode: false,
+      forceDarkModeState: "light",
       spec: {
         url: "/openapi",
       },
