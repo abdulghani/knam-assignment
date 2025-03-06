@@ -24,7 +24,9 @@ Ensure you have the following installed:
    npm run dev
    ```
 
-The API should be served in `http://localhost:3000` with the default `.env` provided
+The API should be served in `http://localhost:3000` with the default `.env` provided.
+
+To cleanup docker image running, you can use `npm run cleanup` command.
 
 ## Design Choices
 - Hono over Express, Identical API with helper packages for documentations.
