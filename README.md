@@ -27,10 +27,10 @@ Ensure you have the following installed:
 The API should be served in `http://localhost:3000` with the default `.env` provided
 
 ## Design Choices
-- **Hono over Express**: Identical API with helper packages for documentations.
-- **PgBoss for Job Queue**: Ensures reliable scheduling and processing of reports.
-- **Knex for Database Access**: Simplifies SQL queries and improves maintainability.
-- **TypeScript**: Provides type safety and better code organization.
+- Hono over Express, Identical API with helper packages for documentations.
+- PgBoss for Job Queue, Ensures reliable scheduling and processing of reports.
+- Knex for Database Access, Simplifies SQL queries and improves maintainability.
+- TypeScript, Provides type safety and better code organization.
 - Provided migration and initial seed data
 - Report related route consolidated to single path `/report`
 - Pending scheduled report is recorded in the database for the CRON job to retrieve, ensuring pending reports are persisted to process.
@@ -47,4 +47,5 @@ The API should be served in `http://localhost:3000` with the default `.env` prov
 - Add route request validation
 - Add unit and integration tests.
 - Separate data access to a tested model repository
+- Add the report generation process to the queue/schedule
 
