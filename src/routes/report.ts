@@ -100,6 +100,7 @@ reportRoute.post(
   describeRoute({
     description: "Create a report request",
     requestBody: {
+      required: true,
       content: {
         "application/json": {
           schema: {
@@ -111,8 +112,17 @@ reportRoute.post(
                 description: "Timestamp to schedule the report processing",
               },
             },
-            example: {
-              schedule: "2025-01-01T10:00:00Z",
+          },
+          examples: {
+            withoutSchedule: {
+              summary: "Process report immediately",
+              value: {},
+            },
+            withSchedule: {
+              summary: "Schedule report for processing",
+              value: {
+                schedule: "2025-01-01T10:00:00Z",
+              },
             },
           },
         },
