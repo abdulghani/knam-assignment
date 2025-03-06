@@ -38,4 +38,5 @@ The API should be served in `http://localhost:3000` with the default `.env` prov
 
 ## Future Improvements
 - Implement authentication and authorization.
+- Add unit and integration tests.
 
