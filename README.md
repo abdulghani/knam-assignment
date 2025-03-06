@@ -30,6 +30,8 @@ Ensure you have the following installed:
    npm run dev
    ```
 
+The API should be served in `http://localhost:3000` with the default `.env` provided
+
 ## Design Choices
 - **Hono over Express**: Hono is lightweight and optimized for performance.
 - **PgBoss for Job Queue**: Ensures reliable scheduling and processing of reports.
