@@ -4,6 +4,7 @@ import { ulid } from "ulid";
 import { db } from "../db";
 import { PROCESS_REPORT_EVENT } from "../tasks/process-report";
 import { queue } from "../queue";
+import moment from "moment";
 
 export const reportRoute = new Hono().basePath("/report");
 const REPORT_FIELD_SELECTION = [
@@ -115,6 +116,10 @@ reportRoute.post(
     const reportId: string = ulid();
 
     if (schedule) {
+      if (!moment(schedule).isValid()) {
+        return c.json({ error: "Invalid schedule format" }, 400);
+      }
+
       await db("reports").insert({
         id: reportId,
         status: "scheduled",
