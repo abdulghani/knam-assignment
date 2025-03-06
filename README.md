@@ -40,6 +40,7 @@ After you're finished using the API, if you need to cleanup docker image running
 - Pending scheduled report is recorded in the database for the CRON job to retrieve, ensuring pending reports are persisted to process.
 - Provided OpenAPI documentation in GET `/openapi` path and Scalar UI on GET `/` path
 - Pino is used for logging, allowing real-time visibility into report processing as it occurs.
+- The development database data is stored in a relative directory within the project, making it easy to clean up when needed.
 
 ## Assumptions
 - Reports are processed asynchronously and not immediately available.
