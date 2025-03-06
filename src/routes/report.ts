@@ -139,6 +139,7 @@ reportRoute.get(
     parameters: [
       {
         name: "id",
+        description: "Report ID",
         in: "path",
         required: true,
       },
@@ -162,6 +163,7 @@ reportRoute.delete(
     parameters: [
       {
         name: "id",
+        description: "Report ID",
         in: "path",
         required: true,
       },

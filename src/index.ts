@@ -6,6 +6,7 @@ import { logger } from "./logger";
 import open from "open";
 import { reportRoute } from "./routes/report";
 import { registerDocs } from "./routes/docs";
+import { PORT } from "./constants/port";
 
 const app = new Hono();
 
@@ -17,11 +18,13 @@ app.route("/", reportRoute);
   await migrate();
   await initializeQueue();
 
-  const PORT = process.env.PORT || 3000;
-  logger.info(`Server running on port ${PORT}`);
   serve({
     fetch: app.fetch.bind(app),
     port: Number(PORT),
   });
-  open("http://localhost:3000");
+
+  if (process.env.NODE_ENV === "development") {
+    logger.info(`Server running on port ${PORT}`);
+    open("http://localhost:3000");
+  }
 })();

@@ -35,6 +35,7 @@ async function logExistingQueueAndSchedules() {
 }
 
 export async function initializeQueue() {
+  // start pg-boss before registering tasks, ensure queue and schedule are running
   queue.on("error", logger.error);
   await queue.start();
 

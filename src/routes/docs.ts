@@ -1,6 +1,7 @@
 import { Hono } from "hono";
 import { openAPISpecs } from "hono-openapi";
 import { apiReference } from "@scalar/hono-api-reference";
+import { PORT } from "../constants/port";
 
 export function registerDocs(app: Hono) {
   app.get(
@@ -14,7 +15,7 @@ export function registerDocs(app: Hono) {
         },
         servers: [
           {
-            url: `http://localhost:${process.env.PORT}`,
+            url: `http://localhost:${PORT}`,
             description: "Local server",
           },
         ],
