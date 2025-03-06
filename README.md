@@ -33,7 +33,7 @@ Ensure you have the following installed:
 The API should be served in `http://localhost:3000` with the default `.env` provided
 
 ## Design Choices
-- **Hono over Express**: Hono is lightweight and optimized for performance.
+- **Hono over Express**: Identical API with helper packages for documentations.
 - **PgBoss for Job Queue**: Ensures reliable scheduling and processing of reports.
 - **Knex for Database Access**: Simplifies SQL queries and improves maintainability.
 - **TypeScript**: Provides type safety and better code organization.
